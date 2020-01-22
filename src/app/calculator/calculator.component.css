@@ -1,0 +1,27 @@
+.app-container {
+  width: 70%;
+  margin: auto;
+  font-family: Lato;
+}
+
+.mat-toolbar {
+  padding: 1em;
+}
+
+.mat-card-title {
+  font-size: 18px;
+}
+
+.calc-padding {
+  padding: .4375em 1em;
+}
+
+.dep-list {
+  max-height: 18em; 
+  overflow: auto;
+}
+
+span {
+  color: rgba(0,0,0,.54);
+  font-size: 14px;
+}

@@ -1,0 +1,52 @@
+<div class="app-container" >
+  <mat-toolbar>
+    Benefit Cost Calculator  
+  </mat-toolbar>
+  <form [formGroup] = 'form'>
+    <mat-card fxLayout="row" fxLayoutAlign="space between">
+      <mat-form-field>
+        <input matInput placeholder="Employee Name" formControlName='employeeName'>
+        <mat-error >Enter a valid name</mat-error>
+      </mat-form-field>
+      <mat-card-content *ngIf='!showCost' class="calc-padding">
+        <span>Enter Employee Name to Calculate Cost</span>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-title>
+        <div fxLayout="row" fxLayoutGap="20px">
+          <div class="calc-padding">Dependents</div>
+          <button mat-raised-button class="calc-padding" color="primary" (click)="addDependent()">Add Dependent</button>
+          <button mat-raised-button  color="warn" (click)="deleteDependent()" >Remove Dependent</button>
+        </div>
+      </mat-card-title>
+
+      <div formArrayName="dependents" class="dep-list">
+        <div *ngFor="let dependent of dependentForms.controls; let i = index" [formGroupName]='i'>
+
+          <mat-form-field class="calc-padding">
+            <input matInput placeholder="Dependent Name" formControlName="dependentName" >
+            <mat-error >Enter a valid name</mat-error>
+          </mat-form-field>
+          
+        </div>
+      </div>
+    </mat-card>
+
+    <mat-card *ngIf='showCost'>
+      <mat-card-title>Total Employee Cost =
+        <div>{{empVal$ | async}}</div>
+      </mat-card-title>
+      <mat-card-title>Total Dependent Cost =
+        <div>{{depVal$ | async}}</div>
+      </mat-card-title>
+      <mat-card-title>Total Benefit Cost =
+        <div>{{totalCost$ | async}}</div>   
+      </mat-card-title>
+      <mat-card-title>Yearly Net Salary =
+        <div>{{yearlyNet$ | async}}</div>   
+      </mat-card-title>
+    </mat-card>
+  </form> 
+</div>

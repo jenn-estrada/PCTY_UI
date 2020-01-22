@@ -3,7 +3,7 @@ Angular UI for benefit cost calculator
 
 To get started:
 
-0. You will need to have the latest version of the Angular CLI installed. Read isntructions here: https://angular.io/cli
+0. You will need to have the latest version of the Angular CLI installed. Read instructions here: https://angular.io/cli
 1. Clone the Repository locally
 2. Open a command prompt which has the Angular CLI installed.  Navigate to the base directory.
 3. Type 'npm install'.

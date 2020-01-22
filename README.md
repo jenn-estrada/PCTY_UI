@@ -24,4 +24,4 @@ npm i --global @angular/cli@latest
 npm uninstall @angular-devkit/build-angular
 npm install @angular-devkit/build-angular@0.13.0
 
-2.  There is currently a bug when deleting the last dependent from a list of dependents.
+2.  There is currently a bug when deleting the last dependent from a list of dependents.  The cost of dependents will not zero out correctly, but it will be corrected if you update the employee name or add another dependent.
